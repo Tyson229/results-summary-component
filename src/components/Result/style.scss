@@ -1,0 +1,75 @@
+@use "../../styles/variables";
+
+%flexbox-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  @extend %flexbox-column;
+  width: 100%;
+  row-gap: 1.4rem;
+  border-radius: 0 0 32px 32px;
+  box-sizing: border-box;
+  padding: 1.3rem;
+  filter: drop-shadow(0 30px 60px hsla(224, 82%, 58%, 0.15));
+  background: linear-gradient(
+    variables.$light-slate-blue,
+    variables.$light-royal-blue
+  );
+
+  @media screen and (min-width: 732px) {
+    justify-content: space-around;
+  }
+
+  &--heading {
+    color: variables.$light-blue;
+    font-family: 700;
+  }
+
+  &--score {
+    @extend %flexbox-column;
+    color: variables.$light-blue;
+    width: fit-content;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(
+      variables.$violet-blue,
+      variables.$persian-blue
+    );
+    > :first-child {
+      color: white;
+      font-size: 3rem;
+      line-height: 72px;
+      font-weight: 800;
+    }
+    > :last-child {
+      font-size: 0.9rem;
+      opacity: 51.68%;
+    }
+  }
+
+  &--description {
+    @extend %flexbox-column;
+    text-align: center;
+    width: 70%;
+    > span {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    > p {
+      color: variables.$light-blue;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media screen and (min-width: 736px) {
+  .result {
+    border-radius: 32px;
+  }
+}

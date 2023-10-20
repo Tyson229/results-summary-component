@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  background: #ecf2ff;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 736px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0;
+  
+}
+
+@media screen and (min-width: 736px) {
+  .container {
+    flex-direction: row;
+    height: fit-content;
+    filter: drop-shadow(0 30px 60px hsla(224, 82, 58, 15%));
+    border-radius: 32px;
+  }
+}
